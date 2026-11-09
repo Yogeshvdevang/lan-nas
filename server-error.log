@@ -1,0 +1,7 @@
+127.0.0.1 - - [18/Sep/2026 20:31:37] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:31:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:31:56] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:31:56] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2026 20:32:07] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:32:07] "GET /api/files?path= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:34:07] Request timed out: TimeoutError('timed out')

@@ -1,0 +1,145 @@
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   2cf47c0c
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+127.0.0.1 - - [18/Sep/2026 20:35:22] "GET /api/session HTTP/1.1" 200 -
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+127.0.0.1 - - [18/Sep/2026 20:36:42] "POST /api/login HTTP/1.1" 200 -
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+127.0.0.1 - - [18/Sep/2026 20:40:52] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:41:40] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:41:53] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:42:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:42:03] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:42:03] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2026 20:42:15] "POST /api/login HTTP/1.1" 403 -
+127.0.0.1 - - [18/Sep/2026 20:42:17] "POST /api/login HTTP/1.1" 403 -
+127.0.0.1 - - [18/Sep/2026 20:42:19] "POST /api/login HTTP/1.1" 403 -
+127.0.0.1 - - [18/Sep/2026 20:42:32] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:42:32] "GET /api/files?path= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:43:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:43:13] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2026 20:43:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:43:34] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:43:35] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2026 20:44:00] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:44:00] "GET /api/files?path= HTTP/1.1" 200 -
+192.168.0.100 - - [18/Sep/2026 20:45:19] code 400, message Bad request version ('Ñ')
+192.168.0.100 - - [18/Sep/2026 20:45:19] "\x16\x03\x01\x07\x86\x01\x00\x07\x82\x03\x03y\x00ç&\x0e\x1d\x07âµcyJ÷\x19\x83¢Ió\x86\x93ó'%,ò\x0e¹Å\x99dZb H#û¬´\x8dìW r\x97â¹X"&BÏa)Pú\x0b÷yÎÕ\x1b$\x0cÑ" 400 -
+192.168.0.100 - - [18/Sep/2026 20:45:19] code 400, message Bad request version ("Z\\x11Z\\x1a\\x86='")
+192.168.0.100 - - [18/Sep/2026 20:45:19] "\x16\x03\x01\x07\x86\x01\x00\x07\x82\x03\x03\x83é»¥iQ\x1fÖVOäE\x12áN,\x96à?U\\\x9cé\x81_\x08\x9dñ\x0fuàÐ ÜZ\x8fc\x112ã\x1a3 Z\x11Z\x1a\x86='" 400 -
+192.168.0.100 - - [18/Sep/2026 20:45:21] "GET / HTTP/1.1" 200 -
+192.168.0.100 - - [18/Sep/2026 20:45:21] "GET /api/session HTTP/1.1" 200 -
+192.168.0.100 - - [18/Sep/2026 20:45:21] "GET /favicon.ico HTTP/1.1" 401 -
+192.168.0.100 - - [18/Sep/2026 20:45:37] "POST /api/login HTTP/1.1" 200 -
+192.168.0.100 - - [18/Sep/2026 20:45:37] "GET /api/files?path= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:46:29] "GET /api/files?path= HTTP/1.1" 401 -
+127.0.0.1 - - [18/Sep/2026 20:46:37] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:46:37] "GET /api/files?path= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:46:40] "GET /api/files?path= HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:47:29] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2026 20:47:29] "POST /api/upload?name=upload-check-e084fbf0a50b4656a5768b1db41b7a92.txt HTTP/1.1" 201 -
+127.0.0.1 - - [18/Sep/2026 20:47:29] "GET /api/download?path=upload-check-e084fbf0a50b4656a5768b1db41b7a92.txt HTTP/1.1" 200 -
+192.168.0.104 - - [18/Sep/2026 20:48:00] "POST /api/login HTTP/1.1" 200 -
+192.168.0.104 - - [18/Sep/2026 20:48:00] "POST /api/upload?name=upload-check-5fe305df66a643b681c1fd4e731fe3bd.bin HTTP/1.1" 201 -
+192.168.0.104 - - [18/Sep/2026 20:48:00] "GET /api/download?path=upload-check-5fe305df66a643b681c1fd4e731fe3bd.bin HTTP/1.1" 200 -
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+127.0.0.1 - - [19/Sep/2026 13:58:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 13:58:48] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 13:58:48] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [19/Sep/2026 13:59:53] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 13:59:54] "GET /api/files?path= HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 14:01:54] Request timed out: TimeoutError('timed out')
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+127.0.0.1 - - [19/Sep/2026 14:36:45] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 14:38:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 14:38:10] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 14:38:10] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [19/Sep/2026 14:38:44] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Sep/2026 14:38:44] "GET /api/files?path= HTTP/1.1" 200 -
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+
+  LAN Shelf
+  This computer: http://localhost:8000
+  Other devices: http://192.168.0.104:8000
+  Access code:   Alpenlibe
+  Shared folder: C:\Users\ADMIN\Desktop\network file share\shared
+
+  Keep this window open. Press Ctrl+C to stop.
+
+127.0.0.1 - - [09/Nov/2026 15:49:05] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 15:49:05] "GET /api/session HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2026 15:49:05] "GET /favicon.ico HTTP/1.1" 401 -
+127.0.0.1 - - [09/Nov/2026 15:51:05] Request timed out: TimeoutError('timed out')
