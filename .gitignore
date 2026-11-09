@@ -1,0 +1,6 @@
+shared/
+__pycache__/
+*.log
+.lan-access-code
+tools/
+remote-url.txt

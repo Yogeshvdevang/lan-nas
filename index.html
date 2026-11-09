@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAN Shelf · Your shared space</title>
+<style>
+@import url('data:text/css,');
+:root{font-family:Inter,Segoe UI,system-ui,sans-serif;color:#243630;background:#f7f9f6;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:wait}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #9bc9ad;outline-offset:3px}button{border:1px solid #dce4dd;background:white;border-radius:9px;padding:10px 16px;color:inherit}.primary{background:#286248;color:white;border-color:#286248}header{height:83px;border-bottom:1px solid #e2e8e1;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5vw}.brand{display:flex;align-items:center;gap:12px;font-weight:750;font-size:22px;letter-spacing:-.7px}.logo{display:grid;place-items:center;width:38px;height:38px;background:#286248;color:#fff;border-radius:11px;font-size:25px}.badge{font-size:12px;color:#477258;background:#edf5ee;border:1px solid #dce9dd;border-radius:30px;padding:8px 13px}.badge:before{content:'●';color:#5b9e70;margin-right:7px}main{max-width:1150px;margin:auto;padding:52px 30px}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:700;color:#7a8d7c}h1{font-size:38px;letter-spacing:-1.5px;margin:12px 0}p{color:#7a877e;line-height:1.6}.heading{display:flex;justify-content:space-between;align-items:center;gap:20px}.actions{display:flex;gap:10px;flex-wrap:wrap}.drop{margin:29px 0 31px;border:1.5px dashed #b8cdbd;background:#edf4ed;border-radius:15px;padding:31px;text-align:center;transition:.15s}.drop.over{background:#d6ead8;border-color:#286248}.upload-icon{font-size:27px;color:#477258;margin-bottom:10px}.drop strong{font-size:16px}.drop p{font-size:13px;margin:7px 0}.link{border:0;background:none;color:#286248;text-decoration:underline;padding:0}.panel{background:white;border:1px solid #e0e6df;border-radius:13px;overflow:hidden}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 23px;border-bottom:1px solid #e9ede7}.crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:7px;font-size:14px}.crumbs button{padding:3px;border:0;border-radius:3px;font-weight:600}.search{border:1px solid #e0e5df;background:#fafbf9;border-radius:7px;padding:9px 12px;width:220px}table{width:100%;border-collapse:collapse;text-align:left}th{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:#87938a;font-weight:600;background:#fafbf9;padding:14px 23px}td{padding:17px 23px;border-top:1px solid #eef1ec;font-size:13px;color:#7b887f}td:first-child{color:#344b3e;font-weight:550}.file-name{display:flex;align-items:center;gap:14px;overflow-wrap:anywhere}.file-icon{background:#f0f4ee;color:#719272;border-radius:8px;width:34px;height:39px;display:grid;place-items:center;flex-shrink:0;font-size:19px}.folder-button{border:0;background:none;padding:0;text-align:left}.download{font-size:12px;color:#286248;text-decoration:none;background:#f0f5ee;border-radius:6px;padding:7px 10px}.empty{text-align:center;padding:45px;color:#829087}.footer{display:flex;justify-content:space-between;font-size:12px;color:#8c978f;padding:18px 2px}.status{min-height:22px;font-size:13px;color:#286248;margin:10px 0}.status.error{color:#b34736}progress{width:100%;height:6px;accent-color:#286248}dialog{border:1px solid #dce4dc;border-radius:17px;padding:32px;max-width:420px;width:calc(100% - 32px);box-shadow:0 20px 100px #20382b22}dialog::backdrop{background:#edf2ebdd;backdrop-filter:blur(5px)}dialog h2{margin-top:0;letter-spacing:-.6px}dialog input{display:block;width:100%;padding:12px;border:1px solid #cbd9ce;border-radius:8px;margin:9px 0 18px}dialog p{font-size:14px}dialog label{font-size:12px}dialog .actions{justify-content:flex-end}.hidden{display:none!important}@media(max-width:650px){header{padding:0 22px;height:72px}main{padding:30px 17px}.heading{align-items:flex-start;flex-direction:column}h1{font-size:31px}.toolbar{align-items:flex-start;flex-direction:column}.search{width:100%}td,th{padding:14px 12px}.modified{display:none}.footer{gap:15px;font-size:11px}.drop{padding:25px 15px}.badge{font-size:10px}.actions button{font-size:13px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><span class="logo">▤</span> LAN Shelf</div><span class="badge">Local network</span></header>
+<main>
+<div class="heading"><div><span class="eyebrow">A LITTLE CLOSER. A LOT EASIER.</span><h1>Your shared space.</h1><p>Move files between devices. Keep everything close to home.</p></div><div class="actions"><button id="new-folder">＋ New folder</button><button id="upload-folder">Upload folder</button><button class="primary" id="upload">↑ Upload files</button></div></div>
+<div class="drop" id="drop"><div class="upload-icon">↥</div><strong>Drop files or folders right here</strong><p>or <button class="link" id="browse">browse files</button> to add them to this folder</p><p>Direct to this computer · No cloud storage</p></div>
+<input type="file" id="picker" multiple hidden>
+<input type="file" id="folder-picker" webkitdirectory multiple hidden>
+<div id="status" class="status" role="status" aria-live="polite"></div><progress id="progress" class="hidden" max="100" value="0" aria-label="Upload progress"></progress>
+<section class="panel"><div class="toolbar"><nav class="crumbs" id="crumbs" aria-label="Folder path"></nav><input class="search" id="search" type="search" placeholder="Search this folder…" aria-label="Search this folder"></div><table><thead><tr><th>Name</th><th>Size</th><th class="modified">Last modified</th><th><span aria-label="Actions"> </span></th></tr></thead><tbody id="files"></tbody></table><div class="empty hidden" id="empty">Your shelf is ready. Add your first file above.</div></section>
+<div class="footer"><span id="count">Shared files</span><span>One network. All your devices.</span></div>
+</main>
+<dialog id="login"><form id="login-form"><div class="upload-icon">▤</div><h2>Welcome to your shelf.</h2><p>Enter the access code displayed in the server window on the host computer.</p><label for="code">Access code</label><input id="code" autocomplete="current-password" type="password" required autofocus><p id="login-error" role="alert"></p><button class="primary" style="width:100%">Open shared space →</button></form></dialog>
+<dialog id="folder-dialog"><form id="folder-form"><h2>A new place for your files.</h2><label for="folder-name">Folder name</label><input id="folder-name" required maxlength="200"><p id="folder-error" role="alert"></p><div class="actions"><button type="button" id="cancel-folder">Cancel</button><button class="primary">Create folder</button></div></form></dialog>
+<script>
+const $=id=>document.getElementById(id);let path='',files=[],busy=false,loadVersion=0;
+const join=name=>path?path+'/'+name:name;
+const size=n=>{if(n<1024)return n+' B';const i=Math.min(Math.floor(Math.log(n)/Math.log(1024)),4);return (n/1024**i).toFixed(1)+' '+['B','KB','MB','GB','TB'][i]};
+function status(message,error=false){$('status').textContent=message;$('status').classList.toggle('error',error)}
+async function api(url,body){const response=await fetch(url,body===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json','X-LAN-Shelf':'1'},body:JSON.stringify(body)});const data=await response.json();if(!response.ok){if(response.status===401&&!$('login').open)$('login').showModal();throw Error(data.error||'Request failed.')}return data}
+function crumbs(){const nav=$('crumbs');nav.replaceChildren();let accumulated='';['Shared files',...(path?path.split('/'):[])].forEach((part,i)=>{if(i){nav.append(document.createTextNode(' / '));accumulated+=(accumulated?'/':'')+part}const destination=accumulated,b=document.createElement('button');b.textContent=part;b.onclick=()=>navigate(destination);nav.append(b)})}
+async function navigate(destination){if(busy)return;path=destination;$('search').value='';await refresh()}
+async function refresh(){const version=++loadVersion;try{const data=await api('/api/files?path='+encodeURIComponent(path));if(version!==loadVersion)return;files=data.files;crumbs();render()}catch(e){status(e.message,true)}}
+function render(){const shown=files.filter(f=>f.name.toLowerCase().includes($('search').value.toLowerCase()));$('files').replaceChildren();for(const f of shown){const tr=document.createElement('tr'),name=document.createElement('td'),wrap=document.createElement('div'),icon=document.createElement('span');wrap.className='file-name';icon.className='file-icon';icon.textContent=f.directory?'▰':'▤';wrap.append(icon);const label=document.createElement(f.directory?'button':'span');label.textContent=f.name;if(f.directory){label.className='folder-button';label.onclick=()=>navigate(join(f.name))}wrap.append(label);name.append(wrap);tr.append(name);const bytes=document.createElement('td');bytes.textContent=f.directory?'—':size(f.size);tr.append(bytes);const modified=document.createElement('td');modified.className='modified';modified.textContent=new Date(f.modified*1000).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});tr.append(modified);const action=document.createElement('td');{const a=document.createElement('a');a.className='download';a.textContent=f.directory?'Download ZIP':'Download';a.href='/api/download?path='+encodeURIComponent(join(f.name));action.append(a)}tr.append(action);$('files').append(tr)}$('empty').classList.toggle('hidden',shown.length>0);$('empty').textContent=files.length?'No files match your search.':'Your shelf is ready. Add your first file above.';$('count').textContent=files.length+' items · '+size(files.filter(f=>!f.directory).reduce((a,f)=>a+f.size,0))}
+async function sendFile(file,destination=path){
+  // Detect inaccessible/moved files before opening an upload connection.
+  try{await file.slice(0,65536).arrayBuffer()}catch{
+    throw Error('Your browser cannot read "'+file.name+'". Save it on this device, then select it again.');
+  }
+  const session=await api('/api/session');
+  if(!session.authenticated){if(!$('login').open)$('login').showModal();throw Error('Your session expired. Sign in, then select the file again.')}
+  return new Promise((resolve,reject)=>{
+    const xhr=new XMLHttpRequest();let sent=0;
+    xhr.open('POST','/api/upload?path='+encodeURIComponent(destination)+'&name='+encodeURIComponent(file.name));
+    xhr.setRequestHeader('X-LAN-Shelf','1');xhr.timeout=30*60*1000;
+    xhr.upload.onprogress=e=>{sent=e.loaded;if(e.lengthComputable)$('progress').value=e.loaded/e.total*100};
+    xhr.onload=()=>{
+      if(xhr.status>=200&&xhr.status<300){resolve();return}
+      let message='Upload failed (HTTP '+xhr.status+').';
+      if(xhr.status===413)message='The gateway rejected this file as too large. Use the local HTTP address for large files.';
+      if(xhr.status===401){message='Your session expired. Sign in and select the file again.';if(!$('login').open)$('login').showModal()}
+      try{const data=JSON.parse(xhr.responseText);if(data.error)message=data.error}catch{}
+      reject(Error(message));
+    };
+    xhr.onerror=async()=>{
+      try{
+        const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),5000);
+        let response;try{response=await fetch('/api/session',{cache:'no-store',signal:controller.signal})}finally{clearTimeout(timer)}
+        if(!response.ok)throw Error();
+        reject(Error('The server is reachable, but the browser could not complete "'+file.name+'" ('+size(sent)+' sent). Check the folder before retrying; reselect a locally saved copy of the file.'));
+      }catch{reject(Error('Cannot reach the server. Check your Wi-Fi and the address, then try again.'))}
+    };
+    xhr.ontimeout=()=>reject(Error('Upload timed out after 30 minutes. Check the folder before retrying.'));
+    xhr.onabort=()=>reject(Error('Upload was cancelled.'));
+    xhr.send(file);
+  });
+}
+async function upload(list,folder=false,directories=[]){
+  if(busy||(!list.length&&!directories.length))return;busy=true;
+  for(const id of ['upload','upload-folder','browse','new-folder'])$(id).disabled=true;
+  $('progress').classList.remove('hidden');let done=0;
+  try{
+    const destinations=new Map([['',path]]);
+    if(folder){
+      const parents=[...directories,...list.map(file=>(file.relativePath||file.webkitRelativePath||file.name).split('/').slice(0,-1).join('/'))];
+      for(const directory of parents){
+        const parts=directory?directory.split('/'):[];
+        let relative='';
+        for(const name of parts){
+          const parent=relative;relative+=(relative?'/':'')+name;
+          if(!destinations.has(relative)){
+            status('Creating folder '+relative+'...');
+            const created=await api('/api/folder',{path:destinations.get(parent),name,unique:parent===''});
+            destinations.set(relative,[destinations.get(parent),created.name].filter(Boolean).join('/'));
+          }
+        }
+      }
+    }
+    for(const file of list){
+      status('Uploading '+file.name+' ('+size(file.size)+', '+(done+1)+' of '+list.length+')');
+      $('progress').value=0;await sendFile(file.file||file,folder?destinations.get((file.relativePath||file.webkitRelativePath||file.name).split('/').slice(0,-1).join('/')):path);done++;
+    }
+    status(done+' file'+(done===1?'':'s')+(folder?' and their folders':'')+' added to your shelf.');
+  }catch(e){status(e.message+' '+done+' file(s) completed.',true)}
+  finally{
+    busy=false;for(const id of ['upload','upload-folder','browse','new-folder'])$(id).disabled=false;
+    $('progress').classList.add('hidden');$('picker').value='';$('folder-picker').value='';await refresh();
+  }
+}
+async function collectDrop(entries){
+  const list=[],directories=[];
+  async function visit(entry,parent=''){
+    const relativePath=parent+entry.name;
+    if(entry.isDirectory){
+      directories.push(relativePath);
+      const reader=entry.createReader();
+      while(true){
+        const batch=await new Promise((resolve,reject)=>reader.readEntries(resolve,reject));
+        if(!batch.length)break;
+        for(const child of batch)await visit(child,relativePath+'/');
+      }
+    }else if(entry.isFile){
+      const file=await new Promise((resolve,reject)=>entry.file(resolve,reject));
+      list.push({file,name:file.name,size:file.size,relativePath});
+    }
+  }
+  for(const entry of entries)await visit(entry);
+  return {list,directories};
+}
+async function dropUpload(event){
+  if(busy)return;
+  // Capture entries during the drop event, before browser access expires.
+  const items=Array.from(event.dataTransfer.items).filter(item=>item.kind==='file');
+  const entries=items.map(item=>item.webkitGetAsEntry?.());
+  if(!entries.length||entries.some(entry=>!entry)){upload(Array.from(event.dataTransfer.files));return}
+  busy=true;
+  const controls=['upload','upload-folder','browse','new-folder'];
+  controls.forEach(id=>$(id).disabled=true);
+  status('Reading dropped files and folders...');
+  let collected;
+  try{collected=await collectDrop(entries)}
+  catch(error){status('Could not read the dropped folder. '+error.message,true)}
+  finally{busy=false;controls.forEach(id=>$(id).disabled=false)}
+  if(collected)await upload(collected.list,true,collected.directories);
+}
+for(const id of ['upload','browse'])$(id).onclick=()=>$('picker').click();$('picker').onchange=()=>upload(Array.from($('picker').files));$('search').oninput=render;
+$('upload-folder').onclick=()=>$('folder-picker').click();$('folder-picker').onchange=()=>upload(Array.from($('folder-picker').files),true);
+for(const event of ['dragenter','dragover'])$('drop').addEventListener(event,e=>{e.preventDefault();$('drop').classList.add('over')});for(const event of ['dragleave','drop'])$('drop').addEventListener(event,e=>{e.preventDefault();$('drop').classList.remove('over')});$('drop').addEventListener('drop',dropUpload);window.addEventListener('dragover',e=>e.preventDefault());window.addEventListener('drop',e=>e.preventDefault());
+$('login').addEventListener('cancel',e=>e.preventDefault());$('login-form').onsubmit=async e=>{e.preventDefault();try{await api('/api/login',{code:$('code').value});$('code').value='';$('login').close();status('');await refresh()}catch(error){$('login-error').textContent=error.message}};
+$('new-folder').onclick=()=>{$('folder-form').reset();$('folder-error').textContent='';$('folder-dialog').showModal()};$('cancel-folder').onclick=()=>$('folder-dialog').close();$('folder-form').onsubmit=async e=>{e.preventDefault();try{await api('/api/folder',{path,name:$('folder-name').value});$('folder-dialog').close();await refresh()}catch(error){$('folder-error').textContent=error.message}};
+window.addEventListener('beforeunload',e=>{if(busy){e.preventDefault();e.returnValue=''}});
+(async()=>{crumbs();try{const session=await api('/api/session');if(session.authenticated)await refresh();else $('login').showModal()}catch(e){status('Cannot reach the server. '+e.message,true)}})();
+</script></body></html>
